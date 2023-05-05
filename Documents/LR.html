@@ -14579,7 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Pr%C3%A9diction-du-DAX40-(historique-via-l'API-Yahoo-Finance)">Pr&#233;diction du DAX40 (historique via l'API Yahoo Finance)<a class="anchor-link" href="#Pr%C3%A9diction-du-DAX40-(historique-via-l'API-Yahoo-Finance)">&#182;</a></h1>
+<h1 id="Pr%C3%A9diction-du-DAX40-(API-Yahoo-Finance)">Pr&#233;diction du DAX40 (API Yahoo Finance)<a class="anchor-link" href="#Pr%C3%A9diction-du-DAX40-(API-Yahoo-Finance)">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14594,7 +14594,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14602,57 +14602,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install yfinance
-<span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="ch">#!pip install yfinance</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Requirement already satisfied: yfinance in c:\users\jeff\anaconda3\lib\site-packages (0.2.18)
-Requirement already satisfied: requests&gt;=2.26 in c:\users\jeff\anaconda3\lib\site-packages (from yfinance) (2.27.1)
-Requirement already satisfied: frozendict&gt;=2.3.4 in c:\users\jeff\anaconda3\lib\site-packages (from yfinance) (2.3.8)
-Requirement already satisfied: pandas&gt;=1.3.0 in c:\users\jeff\anaconda3\lib\site-packages (from yfinance) (1.4.2)
-Requirement already satisfied: appdirs&gt;=1.4.4 in c:\users\jeff\anaconda3\lib\site-packages (from yfinance) (1.4.4)
-Requirement already satisfied: cryptography&gt;=3.3.2 in c:\users\jeff\anaconda3\lib\site-packages (from yfinance) (3.4.8)
-Requirement already satisfied: pytz&gt;=2022.5 in c:\users\jeff\anaconda3\lib\site-packages (from yfinance) (2023.3)
-Requirement already satisfied: html5lib&gt;=1.1 in c:\users\jeff\anaconda3\lib\site-packages (from yfinance) (1.1)
-Requirement already satisfied: beautifulsoup4&gt;=4.11.1 in c:\users\jeff\anaconda3\lib\site-packages (from yfinance) (4.11.1)
-Requirement already satisfied: numpy&gt;=1.16.5 in c:\users\jeff\anaconda3\lib\site-packages (from yfinance) (1.21.5)
-Requirement already satisfied: lxml&gt;=4.9.1 in c:\users\jeff\anaconda3\lib\site-packages (from yfinance) (4.9.2)
-Requirement already satisfied: multitasking&gt;=0.0.7 in c:\users\jeff\anaconda3\lib\site-packages (from yfinance) (0.0.11)
-Requirement already satisfied: soupsieve&gt;1.2 in c:\users\jeff\anaconda3\lib\site-packages (from beautifulsoup4&gt;=4.11.1-&gt;yfinance) (2.3.1)
-Requirement already satisfied: cffi&gt;=1.12 in c:\users\jeff\anaconda3\lib\site-packages (from cryptography&gt;=3.3.2-&gt;yfinance) (1.15.0)
-Requirement already satisfied: pycparser in c:\users\jeff\anaconda3\lib\site-packages (from cffi&gt;=1.12-&gt;cryptography&gt;=3.3.2-&gt;yfinance) (2.21)
-Requirement already satisfied: six&gt;=1.9 in c:\users\jeff\anaconda3\lib\site-packages (from html5lib&gt;=1.1-&gt;yfinance) (1.16.0)
-Requirement already satisfied: webencodings in c:\users\jeff\anaconda3\lib\site-packages (from html5lib&gt;=1.1-&gt;yfinance) (0.5.1)
-Requirement already satisfied: python-dateutil&gt;=2.8.1 in c:\users\jeff\anaconda3\lib\site-packages (from pandas&gt;=1.3.0-&gt;yfinance) (2.8.2)
-Requirement already satisfied: charset-normalizer~=2.0.0 in c:\users\jeff\anaconda3\lib\site-packages (from requests&gt;=2.26-&gt;yfinance) (2.0.4)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in c:\users\jeff\anaconda3\lib\site-packages (from requests&gt;=2.26-&gt;yfinance) (3.3)
-Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\jeff\anaconda3\lib\site-packages (from requests&gt;=2.26-&gt;yfinance) (2021.10.8)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in c:\users\jeff\anaconda3\lib\site-packages (from requests&gt;=2.26-&gt;yfinance) (1.26.9)
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -15188,7 +15143,7 @@ Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in c:\users\jeff\anac
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.legend.Legend at 0x12e489c4e80&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x1b395d4f9a0&gt;</pre>
 </div>
 
 </div>
