@@ -75,9 +75,24 @@
         <div id="lead-content">
             <font size="-2"><h1>Jean-François <br>Berger-Lefébure<h1></font>
             <h2>Data Science</h2>
-
+             <a href="#" id="download-link" class="btn-rounded-white">Download Resume</a>
         </div>
 
+                <script>
+                      var downloadLink = document.getElementById('download-link');
+
+                      downloadLink.addEventListener('click', function(event) {
+                        event.preventDefault();
+
+                        var password = prompt('Enter the password (Country where I want to work) :');
+
+                        if (password === 'Switzerland') {
+                          window.location.href = 'https://drive.google.com/file/d/17ZYnHoMl07RhZfo0dx4cnRV_mJ7d8fnb/view?usp=sharing';
+                        } else {
+                          alert('Incorrect password');
+                        }
+                      });
+                    </script>
 
 
     <!-- End #lead-content -->
