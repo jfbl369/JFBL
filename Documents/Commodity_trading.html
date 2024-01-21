@@ -14781,7 +14781,7 @@ Requirement already satisfied: greenlet!=0.4.17 in /usr/local/lib/python3.10/dis
 Requirement already satisfied: setuptools&gt;=18.5 in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;ipython-sql) (67.7.2)
 Collecting jedi&gt;=0.16 (from ipython-&gt;ipython-sql)
   Downloading jedi-0.19.1-py2.py3-none-any.whl (1.6 MB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">1.6/1.6 MB</span> <span class="ansi-red-fg">8.6 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">1.6/1.6 MB</span> <span class="ansi-red-fg">7.9 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
 Requirement already satisfied: decorator in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;ipython-sql) (4.4.2)
 Requirement already satisfied: pickleshare in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;ipython-sql) (0.7.5)
 Requirement already satisfied: traitlets&gt;=4.2 in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;ipython-sql) (5.7.1)
@@ -14818,7 +14818,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-pac
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Laoding-dataset-%22Commodity-trading%22">Laoding dataset "Commodity trading"<a class="anchor-link" href="#Laoding-dataset-%22Commodity-trading%22">&#182;</a></h3>
+<h3 id="Loading-dataset-%22Commodity-trading%22">Loading dataset "Commodity trading"<a class="anchor-link" href="#Loading-dataset-%22Commodity-trading%22">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -14910,11 +14910,52 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-pac
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of rows in the DataFrame:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Number of rows in the DataFrame: 8225871
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">Data</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">Data</span><span class="w"></span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">category</span><span class="w"> </span><span class="k">DESC</span><span class="w"></span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">40</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 
      </div>
@@ -14945,7 +14986,7 @@ Done.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
 
 
 
@@ -14969,62 +15010,482 @@ Done.
         <tr>
             <td>Afghanistan</td>
             <td>2016</td>
-            <td>10410</td>
-            <td>Sheep, live</td>
-            <td>Export</td>
-            <td>6088</td>
-            <td>2339.0</td>
-            <td>Number of items</td>
-            <td>51.0</td>
-            <td>01_live_animals</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Import</td>
+            <td>6534140413</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
         </tr>
         <tr>
             <td>Afghanistan</td>
             <td>2016</td>
-            <td>10420</td>
-            <td>Goats, live</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
             <td>Export</td>
-            <td>3958</td>
-            <td>984.0</td>
-            <td>Number of items</td>
-            <td>53.0</td>
-            <td>01_live_animals</td>
+            <td>596455337</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td>
+            <td>2015</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Import</td>
+            <td>7722865049</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td>
+            <td>2015</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>571404967</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td>
+            <td>2014</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Import</td>
+            <td>7697178170</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td>
+            <td>2014</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>570534007</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td>
+            <td>2013</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Import</td>
+            <td>8554413749</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td>
+            <td>2013</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>514972983</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td>
+            <td>2012</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Import</td>
+            <td>6204984101</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td>
+            <td>2012</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>428902710</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td>
+            <td>2011</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Import</td>
+            <td>6390310947</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td>
+            <td>2011</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>375850935</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td>
+            <td>2010</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Import</td>
+            <td>5154249867</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td>
+            <td>2010</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>388483635</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td>
+            <td>2009</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Import</td>
+            <td>3336434781</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td>
+            <td>2009</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>403441006</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
         </tr>
         <tr>
             <td>Afghanistan</td>
             <td>2008</td>
-            <td>10210</td>
-            <td>Bovine animals, live pure-bred breeding</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
             <td>Import</td>
-            <td>1026804</td>
-            <td>272.0</td>
-            <td>Number of items</td>
-            <td>3769.0</td>
-            <td>01_live_animals</td>
+            <td>3019860129</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td>
+            <td>2008</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>540065594</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
         </tr>
         <tr>
             <td>Albania</td>
             <td>2016</td>
-            <td>10290</td>
-            <td>Bovine animals, live, except pure-bred breeding</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
             <td>Import</td>
-            <td>2414533</td>
-            <td>1114023.0</td>
-            <td>Number of items</td>
-            <td>6853.0</td>
-            <td>01_live_animals</td>
+            <td>4669289913</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
         </tr>
         <tr>
             <td>Albania</td>
             <td>2016</td>
-            <td>10392</td>
-            <td>Swine, live except pure-bred breeding &gt; 50 kg</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>1962117416</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2015</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
             <td>Import</td>
-            <td>14265937</td>
-            <td>9484953.0</td>
-            <td>Number of items</td>
-            <td>96040.0</td>
-            <td>01_live_animals</td>
+            <td>4320219367</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2015</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>1929657032</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2014</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Import</td>
+            <td>5229972238</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2014</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>2430723644</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2013</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Import</td>
+            <td>4880593254</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2013</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>2331521928</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2012</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Import</td>
+            <td>4879829648</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2012</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>1967918947</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2011</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Import</td>
+            <td>5395853069</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2011</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>1948207305</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2010</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Import</td>
+            <td>4602774967</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2010</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>1549955724</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2010</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Re-Import</td>
+            <td>26393</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2009</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Import</td>
+            <td>4548287875</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2009</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>1087914902</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2009</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Re-Import</td>
+            <td>272403</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2008</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Import</td>
+            <td>5250490022</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2008</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Export</td>
+            <td>1354921653</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2008</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Re-Export</td>
+            <td>810868093</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
+        </tr>
+        <tr>
+            <td>Albania</td>
+            <td>2008</td>
+            <td>TOTAL</td>
+            <td>ALL COMMODITIES</td>
+            <td>Re-Import</td>
+            <td>509068</td>
+            <td>None</td>
+            <td>No Quantity</td>
+            <td>None</td>
+            <td>all_commodities</td>
         </tr>
     </tbody>
 </table>
@@ -15369,16 +15830,16 @@ Done.
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span><span class="w"></span>
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Switzerland_activity</span><span class="w"> </span><span class="p">(</span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="n">canton</span><span class="p">,</span><span class="w"> </span><span class="n">activity</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"></span>
-<span class="p">(</span><span class="s1">&#39;Berne&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Bern&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;10_cereals&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="s1">&#39;Zurich&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Zurich&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;18_cocoa_and_cocoa_preparations&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="s1">&#39;Lucerne&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Luzern&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;05_products_of_animal_origin_nes&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="s1">&#39;Geneva&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Geneva&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;22_beverages_spirits_and_vinegar&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="s1">&#39;Basel&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Basel-Stadt&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;30_pharmaceutical_products&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="s1">&#39;Lausanne&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Vaud&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;84_nuclear_reactors_boilers_machinery_etc&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="s1">&#39;Winterthur&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Zurich&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;85_electrical_electronic_equipment&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="s1">&#39;Saint-Gall&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;St. Gallen&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;91_clocks_and_watches_and_parts_thereof&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="s1">&#39;Lugano&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Lugano&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;91_clocks_and_watches_and_parts_thereof&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="s1">&#39;Bienne&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Bienne&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;91_clocks_and_watches_and_parts_thereof&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="p">(</span><span class="ss">&quot;Berne&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Bern&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;10_cereals&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="ss">&quot;Zurich&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Zurich&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;18_cocoa_and_cocoa_preparations&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="ss">&quot;Lucerne&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Luzern&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;05_products_of_animal_origin_nes&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="ss">&quot;Geneva&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Geneva&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;22_beverages_spirits_and_vinegar&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="ss">&quot;Basel&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Basel-Stadt&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;30_pharmaceutical_products&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="ss">&quot;Lausanne&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Vaud&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;84_nuclear_reactors_boilers_machinery_etc&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="ss">&quot;Winterthur&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Zurich&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;85_electrical_electronic_equipment&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="ss">&quot;Saint-Gall&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;St. Gallen&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;91_clocks_and_watches_and_parts_thereof&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="ss">&quot;Lugano&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Lugano&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;91_clocks_and_watches_and_parts_thereof&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="ss">&quot;Bienne&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Bienne&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;91_clocks_and_watches_and_parts_thereof&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 
      </div>
@@ -15711,17 +16172,16 @@ Done.
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span><span class="w"></span>
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Traders</span><span class="w"> </span><span class="p">(</span><span class="n">trader_id</span><span class="p">,</span><span class="w"> </span><span class="n">trader_name</span><span class="p">,</span><span class="w"> </span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="n">contact_email</span><span class="p">,</span><span class="w"> </span><span class="n">contact_phone</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"></span>
-<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Trader 1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Zurich&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;trader1@zurich.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;123-456-7890&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Trader 2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Geneva&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;trader2@geneva.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;234-567-8901&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Trader 3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Basel&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;trader3@basel.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;345-678-9012&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Trader 4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Lausanne&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;trader4@lausanne.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;456-789-0123&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Trader 5&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Berne&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;trader5@bern.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;567-890-1234&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Trader 6&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Winterthur&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;trader6@winterthur.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;678-901-2345&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Trader 7&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Lucerne&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;trader7@lucerne.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;789-012-3456&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Trader 8&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Saint-Gall&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;trader8@stgallen.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;890-123-4567&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Trader 9&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Lugano&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;trader9@lugano.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;901-234-5678&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Trader 10&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Bienne&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;trader10@biel.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;012-345-6789&#39;</span><span class="w"></span>
-<span class="p">);</span><span class="w"></span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Trader 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Zurich&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;trader1@zurich.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;123-456-7890&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Trader 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Geneva&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;trader2@geneva.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;234-567-8901&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Trader 3&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Basel&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;trader3@basel.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;345-678-9012&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Trader 4&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Lausanne&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;trader4@lausanne.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;456-789-0123&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Trader 5&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Berne&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;trader5@bern.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;567-890-1234&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Trader 6&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Winterthur&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;trader6@winterthur.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;678-901-2345&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Trader 7&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Lucerne&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;trader7@lucerne.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;789-012-3456&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Trader 8&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Saint-Gall&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;trader8@stgallen.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;890-123-4567&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Trader 9&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Lugano&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;trader9@lugano.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;901-234-5678&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Trader 10&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Bienne&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;trader10@biel.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;012-345-6789&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 
      </div>
@@ -15994,7 +16454,7 @@ Done.
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Switzerland_filter</span><span class="w"></span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="k">Data</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">country_or_area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Switzerland&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">country_or_area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Switzerland&quot;</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 
      </div>
@@ -17161,14 +17621,14 @@ Done.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span><span class="w"></span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="k">Data</span><span class="w"></span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">country_or_area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Switzerland&quot;</span><span class="w"></span>
-<span class="k">LIMIT</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"></span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 
      </div>
@@ -17199,7 +17659,7 @@ Done.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
 
 
 
@@ -17340,126 +17800,6 @@ Done.
             <td>3038.0</td>
             <td>01_live_animals</td>
         </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>10310</td>
-            <td>Swine, live pure-bred breeding</td>
-            <td>Export</td>
-            <td>37383</td>
-            <td>4131.0</td>
-            <td>Number of items</td>
-            <td>37.0</td>
-            <td>01_live_animals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>10310</td>
-            <td>Swine, live pure-bred breeding</td>
-            <td>Import</td>
-            <td>44395</td>
-            <td>1589.0</td>
-            <td>Number of items</td>
-            <td>19.0</td>
-            <td>01_live_animals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>10391</td>
-            <td>Swine, live except pure-bred breeding &lt; 50 kg</td>
-            <td>Export</td>
-            <td>10841</td>
-            <td>930.0</td>
-            <td>Number of items</td>
-            <td>31.0</td>
-            <td>01_live_animals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>10391</td>
-            <td>Swine, live except pure-bred breeding &lt; 50 kg</td>
-            <td>Import</td>
-            <td>412080</td>
-            <td>2661.0</td>
-            <td>Number of items</td>
-            <td>78.0</td>
-            <td>01_live_animals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>10392</td>
-            <td>Swine, live except pure-bred breeding &gt; 50 kg</td>
-            <td>Export</td>
-            <td>7277</td>
-            <td>2421.0</td>
-            <td>Number of items</td>
-            <td>26.0</td>
-            <td>01_live_animals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>10392</td>
-            <td>Swine, live except pure-bred breeding &gt; 50 kg</td>
-            <td>Import</td>
-            <td>367865</td>
-            <td>125361.0</td>
-            <td>Number of items</td>
-            <td>1000.0</td>
-            <td>01_live_animals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>10410</td>
-            <td>Sheep, live</td>
-            <td>Export</td>
-            <td>3582</td>
-            <td>763.0</td>
-            <td>Number of items</td>
-            <td>18.0</td>
-            <td>01_live_animals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>10410</td>
-            <td>Sheep, live</td>
-            <td>Import</td>
-            <td>188439</td>
-            <td>36020.0</td>
-            <td>Number of items</td>
-            <td>654.0</td>
-            <td>01_live_animals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>10420</td>
-            <td>Goats, live</td>
-            <td>Export</td>
-            <td>3060</td>
-            <td>494.0</td>
-            <td>Number of items</td>
-            <td>16.0</td>
-            <td>01_live_animals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>10420</td>
-            <td>Goats, live</td>
-            <td>Import</td>
-            <td>37407</td>
-            <td>7180.0</td>
-            <td>Number of items</td>
-            <td>112.0</td>
-            <td>01_live_animals</td>
-        </tr>
     </tbody>
 </table>
 </div>
@@ -17475,14 +17815,14 @@ Done.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span><span class="w"></span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="k">Data</span><span class="w"></span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">country_or_area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Switzerland&quot;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">category</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="ss">&quot;99_commodities_not_specified_according_to_kind&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;10_cereals&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="k">LIMIT</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"></span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 
      </div>
@@ -17513,7 +17853,7 @@ Done.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
 
 
 
@@ -17652,126 +17992,6 @@ Done.
             <td>8120.0</td>
             <td>Weight in kilograms</td>
             <td>8120.0</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100510</td>
-            <td>Maize (corn) seed</td>
-            <td>Import</td>
-            <td>9370659</td>
-            <td>1333837.0</td>
-            <td>Weight in kilograms</td>
-            <td>1333837.0</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100510</td>
-            <td>Maize (corn) seed</td>
-            <td>Export</td>
-            <td>366557</td>
-            <td>64898.0</td>
-            <td>Weight in kilograms</td>
-            <td>64898.0</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100590</td>
-            <td>Maize except seed corn</td>
-            <td>Import</td>
-            <td>39172638</td>
-            <td>164535089.0</td>
-            <td>Weight in kilograms</td>
-            <td>164535089.0</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100590</td>
-            <td>Maize except seed corn</td>
-            <td>Export</td>
-            <td>40094</td>
-            <td>115104.0</td>
-            <td>Weight in kilograms</td>
-            <td>115104.0</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100610</td>
-            <td>Rice in the husk (paddy or rough)</td>
-            <td>Import</td>
-            <td>878405</td>
-            <td>2434521.0</td>
-            <td>Weight in kilograms</td>
-            <td>2434521.0</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100610</td>
-            <td>Rice in the husk (paddy or rough)</td>
-            <td>Export</td>
-            <td>14</td>
-            <td>6.0</td>
-            <td>Weight in kilograms</td>
-            <td>6.0</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100620</td>
-            <td>Rice, husked (brown)</td>
-            <td>Import</td>
-            <td>12072986</td>
-            <td>11040497.0</td>
-            <td>Weight in kilograms</td>
-            <td>11040497.0</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100620</td>
-            <td>Rice, husked (brown)</td>
-            <td>Export</td>
-            <td>404447</td>
-            <td>199261.0</td>
-            <td>Weight in kilograms</td>
-            <td>199261.0</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100630</td>
-            <td>Rice, semi-milled or wholly milled</td>
-            <td>Import</td>
-            <td>44864603</td>
-            <td>42045318.0</td>
-            <td>Weight in kilograms</td>
-            <td>42045318.0</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100630</td>
-            <td>Rice, semi-milled or wholly milled</td>
-            <td>Export</td>
-            <td>4967665</td>
-            <td>2026162.0</td>
-            <td>Weight in kilograms</td>
-            <td>2026162.0</td>
             <td>10_cereals</td>
         </tr>
     </tbody>
@@ -18277,7 +18497,7 @@ Done.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span><span class="w"></span>
@@ -18316,7 +18536,7 @@ Done.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
 
 
 
@@ -18486,7 +18706,7 @@ Done.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Querying-Trading-Activities-in-Bern">Querying Trading Activities in Bern<a class="anchor-link" href="#Querying-Trading-Activities-in-Bern">&#182;</a></h4><hr>
-<p>The purpose of this query is to extract and display a maximum of 10 records that combine information from two datasets, focusing specifically on trading activities in the city of Bern. It merges data to show how specific activities in Bern align with broader trade categories, providing a targeted view of trade in this particular city.</p>
+<p>Objective: The purpose of this query is to extract and display a maximum of 10 records that combine information from two datasets, focusing specifically on trading activities in the city of Bern. It merges data to show how specific activities in Bern align with broader trade categories, providing a targeted view of trade in this particular city.</p>
 
 </div>
 </div>
@@ -18496,14 +18716,14 @@ Done.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span><span class="w"></span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Switzerland_filter</span><span class="w"></span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">Switzerland_activity</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Switzerland_activity</span><span class="p">.</span><span class="n">activity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Switzerland_filter</span><span class="p">.</span><span class="n">category</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">Switzerland_activity</span><span class="p">.</span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Berne&quot;</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Switzerland</span><span class="w"></span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">Switzerland_filter</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Switzerland</span><span class="p">.</span><span class="n">activity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Switzerland_filter</span><span class="p">.</span><span class="n">category</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Switzerland</span><span class="p">.</span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Bern&quot;</span><span class="w"></span>
 <span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 
@@ -18527,192 +18747,15 @@ Done.
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre> * sqlite:///ma_base_de_donnees.db
-Done.
+(sqlite3.OperationalError) no such table: Switzerland
+[SQL: SELECT *
+FROM Switzerland
+JOIN Switzerland_filter ON Switzerland.activity = Switzerland_filter.category
+WHERE Switzerland.city = &#34;Bern&#34;
+LIMIT 10;]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
 </pre>
 </div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<table>
-    <thead>
-        <tr>
-            <th>country_or_area</th>
-            <th>year</th>
-            <th>comm_code</th>
-            <th>commodity</th>
-            <th>flow</th>
-            <th>trade_usd</th>
-            <th>weight_kg</th>
-            <th>quantity_name</th>
-            <th>quantity</th>
-            <th>category</th>
-            <th>city</th>
-            <th>canton</th>
-            <th>activity</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100110</td>
-            <td>Durum wheat</td>
-            <td>Import</td>
-            <td>21505222</td>
-            <td>66981669.0</td>
-            <td>Weight in kilograms</td>
-            <td>66981669.0</td>
-            <td>10_cereals</td>
-            <td>Berne</td>
-            <td>Bern</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100110</td>
-            <td>Durum wheat</td>
-            <td>Export</td>
-            <td>1605103</td>
-            <td>6278065.0</td>
-            <td>Weight in kilograms</td>
-            <td>6278065.0</td>
-            <td>10_cereals</td>
-            <td>Berne</td>
-            <td>Bern</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100190</td>
-            <td>Wheat except durum wheat, and meslin</td>
-            <td>Import</td>
-            <td>111010289</td>
-            <td>417808199.0</td>
-            <td>Weight in kilograms</td>
-            <td>417808199.0</td>
-            <td>10_cereals</td>
-            <td>Berne</td>
-            <td>Bern</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100190</td>
-            <td>Wheat except durum wheat, and meslin</td>
-            <td>Export</td>
-            <td>194405</td>
-            <td>212228.0</td>
-            <td>Weight in kilograms</td>
-            <td>212228.0</td>
-            <td>10_cereals</td>
-            <td>Berne</td>
-            <td>Bern</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100200</td>
-            <td>Rye</td>
-            <td>Import</td>
-            <td>1180011</td>
-            <td>2780447.0</td>
-            <td>Weight in kilograms</td>
-            <td>2780447.0</td>
-            <td>10_cereals</td>
-            <td>Berne</td>
-            <td>Bern</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100200</td>
-            <td>Rye</td>
-            <td>Export</td>
-            <td>31</td>
-            <td>5.0</td>
-            <td>Weight in kilograms</td>
-            <td>5.0</td>
-            <td>10_cereals</td>
-            <td>Berne</td>
-            <td>Bern</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100300</td>
-            <td>Barley</td>
-            <td>Import</td>
-            <td>8890250</td>
-            <td>34153473.0</td>
-            <td>Weight in kilograms</td>
-            <td>34153473.0</td>
-            <td>10_cereals</td>
-            <td>Berne</td>
-            <td>Bern</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100300</td>
-            <td>Barley</td>
-            <td>Export</td>
-            <td>256543</td>
-            <td>436960.0</td>
-            <td>Weight in kilograms</td>
-            <td>436960.0</td>
-            <td>10_cereals</td>
-            <td>Berne</td>
-            <td>Bern</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100400</td>
-            <td>Oats</td>
-            <td>Import</td>
-            <td>13651650</td>
-            <td>50128488.0</td>
-            <td>Weight in kilograms</td>
-            <td>50128488.0</td>
-            <td>10_cereals</td>
-            <td>Berne</td>
-            <td>Bern</td>
-            <td>10_cereals</td>
-        </tr>
-        <tr>
-            <td>Switzerland</td>
-            <td>2016</td>
-            <td>100400</td>
-            <td>Oats</td>
-            <td>Export</td>
-            <td>6900</td>
-            <td>8120.0</td>
-            <td>Weight in kilograms</td>
-            <td>8120.0</td>
-            <td>10_cereals</td>
-            <td>Berne</td>
-            <td>Bern</td>
-            <td>10_cereals</td>
-        </tr>
-    </tbody>
-</table>
-</div>
-
 </div>
 
 </div>
@@ -18727,7 +18770,7 @@ Done.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Analysis-of-High-Value-Trade-Years">Analysis of High-Value Trade Years<a class="anchor-link" href="#Analysis-of-High-Value-Trade-Years">&#182;</a></h4><hr>
-<p>The goal of this query is to identify years where total trade values exceeded 1 billion USD in the Switzerland_filter dataset. It aggregates trade data by year, calculates the total trade value for each year, and filters to show only those years with exceptionally high trade volumes. The results are ordered in descending order of trade value.</p>
+<p>Objective: The goal of this query is to identify years where total trade values exceeded 1 billion USD in the Switzerland_filter dataset. It aggregates trade data by year, calculates the total trade value for each year, and filters to show only those years with exceptionally high trade volumes. The results are ordered in descending order of trade value.</p>
 
 </div>
 </div>
@@ -18941,7 +18984,7 @@ Done.
 <span class="k">FROM</span><span class="w"> </span><span class="k">Data</span><span class="w"></span>
 <span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Switzerland_activity</span><span class="w"> </span><span class="n">Sa</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">Data</span><span class="p">.</span><span class="n">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sa</span><span class="p">.</span><span class="n">activity</span><span class="w"></span>
 <span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Traders</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">City</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sa</span><span class="p">.</span><span class="n">City</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Basel&#39;</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Basel&quot;</span><span class="w"></span>
 <span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 
@@ -19631,7 +19674,7 @@ Done.
 <span class="k">AFTER</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Traders</span><span class="w"></span>
 <span class="k">BEGIN</span><span class="w"></span>
 <span class="w">    </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">trader_log</span><span class="w"> </span><span class="p">(</span><span class="n">action</span><span class="p">,</span><span class="w"> </span><span class="n">trader_id</span><span class="p">,</span><span class="w"> </span><span class="n">trader_name</span><span class="p">,</span><span class="w"> </span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="n">contact_email</span><span class="p">,</span><span class="w"> </span><span class="n">contact_phone</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;INSERT&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">trader_id</span><span class="p">,</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">trader_name</span><span class="p">,</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">contact_email</span><span class="p">,</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">contact_phone</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="ss">&quot;INSERT&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">trader_id</span><span class="p">,</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">trader_name</span><span class="p">,</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">contact_email</span><span class="p">,</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">contact_phone</span><span class="p">);</span><span class="w"></span>
 <span class="k">END</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 
@@ -19688,7 +19731,7 @@ Done.
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span><span class="w"></span>
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Traders</span><span class="w"> </span><span class="p">(</span><span class="n">trader_id</span><span class="p">,</span><span class="w"> </span><span class="n">trader_name</span><span class="p">,</span><span class="w"> </span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="n">contact_email</span><span class="p">,</span><span class="w"> </span><span class="n">contact_phone</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"></span>
-<span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Trader 11&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Zug&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;trader2@zug.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;235-567-8901&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Trader 11&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Zug&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;trader2@zug.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;235-567-8901&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 
      </div>
@@ -19791,7 +19834,7 @@ Done.
     <tbody>
         <tr>
             <td>Trader 11</td>
-            <td>2024-01-21 14:16:08</td>
+            <td>2024-01-21 20:23:02</td>
         </tr>
     </tbody>
 </table>
